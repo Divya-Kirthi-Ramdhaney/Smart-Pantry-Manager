@@ -4,14 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.smartpantrymanager.R;
 import com.example.smartpantrymanager.data.DatabaseHelper;
 import com.example.smartpantrymanager.PantryItem;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -37,9 +36,28 @@ public class PantryListActivity extends AppCompatActivity implements PantryAdapt
         recyclerView.setAdapter(adapter);
 
         FloatingActionButton fab = findViewById(R.id.fabAddItem);
-        fab.setOnClickListener(v -> {});
+        fab.setOnClickListener(v -> {Intent intent = new Intent(PantryListActivity.this, AddEditIngredientActivity.class);
+            startActivity(intent);});
 
         refreshList();
+
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNavigation);
+        bottomNav.setSelectedItemId(R.id.nav_pantry);
+        bottomNav.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.nav_pantry) {
+                return true; // already on this screen, do nothing
+            } else if (id == R.id.nav_suggested) {
+                startActivity(new Intent(this, SuggestedRecipesActivity.class));
+                finish();
+                return true;
+            } else if (id == R.id.nav_settings) {
+                startActivity(new Intent(this, SettingsActivity.class));
+                finish();
+                return true;
+            }
+            return false;
+        });
     }
 
     @Override
@@ -55,6 +73,9 @@ public class PantryListActivity extends AppCompatActivity implements PantryAdapt
 
     @Override
     public void onEdit(PantryItem item) {
+        Intent intent = new Intent(this, AddEditIngredientActivity.class);
+        intent.putExtra(AddEditIngredientActivity.EXTRA_ITEM_ID, item.getId());
+        startActivity(intent);
     }
 
     @Override
