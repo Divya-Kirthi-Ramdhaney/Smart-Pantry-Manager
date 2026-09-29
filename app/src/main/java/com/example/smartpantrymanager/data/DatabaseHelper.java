@@ -124,12 +124,84 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         insertRecipeIngredient(db, r1, "salt", 1, "teaspoon");
         insertRecipeIngredient(db, r1, "pepper", 1, "teaspoon");
 
-
         long r2 = insertRecipe(db, "Tomato Pasta", "1. Boil pasta and add salt until al dente.\n2. Heat tomato sauce with garlic.\n3. Combine and serve.");
         insertRecipeIngredient(db, r2, "pasta", 200, "g");
         insertRecipeIngredient(db, r2, "salt", 1, "teaspoon");
         insertRecipeIngredient(db, r2, "tomato", 3, "unit");
         insertRecipeIngredient(db, r2, "garlic", 1, "clove");
+
+        long r3 = insertRecipe(db, "Grilled Lamb Chops", "1. Mix olive oil, lemon juice, salt, and garlic.\n2. Coat chops in marinade.\n3. Grill chops and serve.");
+        insertRecipeIngredient(db, r3, "chops", 200, "g");
+        insertRecipeIngredient(db, r3, "olive oil", 1, "teaspoon");
+        insertRecipeIngredient(db, r3, "lemon juice", 50, "ml");
+        insertRecipeIngredient(db, r3, "garlic", 1, "clove");
+        insertRecipeIngredient(db, r3, "salt", 1, "teaspoon");
+
+
+        long r4 = insertRecipe(db, "Air fryer steak", "1. Rub steak with oil\n2. Season with spices.\n3. Fry and serve.");
+        insertRecipeIngredient(db, r4, "steak", 200, "g");
+        insertRecipeIngredient(db, r4, "oil", 1, "teaspoon");
+        insertRecipeIngredient(db, r4, "mixed spices", 50, "g");
+        insertRecipeIngredient(db, r4, "garlic", 1, "clove");
+
+        long r5 = insertRecipe(db, "Vegan pudding", "1. Add milk, sugar, and cornstarch to pot.\n2. Simmer until smooth.\n3. Mix vanilla extract and serve.");
+        insertRecipeIngredient(db, r5, "almond milk", 200, "ml");
+        insertRecipeIngredient(db, r5, "sugar", 5, "tablespoon");
+        insertRecipeIngredient(db, r5, "cornstarch", 2, "teaspoon");
+        insertRecipeIngredient(db, r5, "vanilla extract", 1, "teaspoon");
+
+        long r6 = insertRecipe(db, "Roasted chickpeas", "1. Mix chickpeas with olive oil and mixed spices.\n2. Roast chickpeas.\n3. Cool chickpeas and serve.");
+        insertRecipeIngredient(db, r6, "chickpeas", 200, "g");
+        insertRecipeIngredient(db, r6, "olive oil", 1, "teaspoon");
+        insertRecipeIngredient(db, r6, "mixed spices", 1, "teaspoon");
+
+        long r7 = insertRecipe(db, "Cheese rolls", "1. Fill cheese into wrappers.\n2. Roll the wrappers.\n3. Fry and serve.");
+        insertRecipeIngredient(db, r7, "cheese", 200, "g");
+        insertRecipeIngredient(db, r7, "pastry wrappers", 10, "units");
+
+        long r8 = insertRecipe(db, "Cauliflower Tots", "1. Mix egg, cheese, mixed spices with minced cauliflower.\n2. Shape and coat with breadcrumbs.\n3. Fry and serve.");
+        insertRecipeIngredient(db, r8, "cauliflower", 1, "units");
+        insertRecipeIngredient(db, r8, "cheese", 200, "g");
+        insertRecipeIngredient(db, r8, "egg", 1, "unit");
+        insertRecipeIngredient(db, r8, "breadcrumbs", 200, "g");
+        insertRecipeIngredient(db, r8, "mixed spices", 1, "tablespoon");
+
+        long r9 = insertRecipe(db, "Mac and cheese", "1. Boil pasta with salt and olive oil.\n2. Drain water from pasta.\n3. Serve with greated cheese.");
+        insertRecipeIngredient(db, r9, "macaroni", 200, "g");
+        insertRecipeIngredient(db, r9, "olive oil", 1, "teaspoon");
+        insertRecipeIngredient(db, r9, "cheese", 50, "g");
+        insertRecipeIngredient(db, r9, "salt", 1, "teaspoon");
+
+        long r10 = insertRecipe(db, "Movie style popcorn", "1. Add oil to pot and pop popcorn.\n2. Add salt once popped.");
+        insertRecipeIngredient(db, r10, "popcorn seeds", 50, "g");
+        insertRecipeIngredient(db, r10, "olive oil", 1, "teaspoon");
+        insertRecipeIngredient(db, r10, "salt", 1, "teaspoon");
+
+        long r11 = insertRecipe(db, "Mashed potatoes", "1. Boil potatoes.\n2. Add butter and spices.\n3. Mash until soft and serve.");
+        insertRecipeIngredient(db, r11, "potatoes", 200, "g");
+        insertRecipeIngredient(db, r11, "butter", 100, "g");
+        insertRecipeIngredient(db, r11, "Mixed spices", 50, "g");
+
+        long r12 = insertRecipe(db, "Sausage rolls", "1. Fry sausages.\n2. Spread tomato sauce on roll.\n3. Add sausage inside roll and serve.");
+        insertRecipeIngredient(db, r12, "sausages", 200, "g");
+        insertRecipeIngredient(db, r12, "olive oil", 1, "teaspoon");
+        insertRecipeIngredient(db, r12, "tomato sauce", 50, "ml");
+        insertRecipeIngredient(db, r12, "roll", 1, "unit");
+
+        long r13 = insertRecipe(db, "Chocolate covered strawberries", "1. Melt chocolate.\n2. Coat strawberries in melted chocolate.\n3. Serve.");
+        insertRecipeIngredient(db, r13, "chocolate", 200, "g");
+        insertRecipeIngredient(db, r13, "strawberries ", 10, "unit");
+
+        long r14 = insertRecipe(db, "Roti", "1. Mix olive oil, water, salt, and flour.\n2. Roll roti's.\n3. Toast and serve.");
+        insertRecipeIngredient(db, r14, "flour", 200, "g");
+        insertRecipeIngredient(db, r14, "olive oil", 1, "teaspoon");
+        insertRecipeIngredient(db, r14, "water", 50, "ml");
+        insertRecipeIngredient(db, r14, "salt", 1, "teaspoon");
+
+        long r15 = insertRecipe(db, "Chips", "1. Cut potato's into wedges.\n2. Fry potato wedges.\n3. Add salt and serve.");
+        insertRecipeIngredient(db, r15, "potato", 200, "g");
+        insertRecipeIngredient(db, r15, "olive oil", 1, "l");
+        insertRecipeIngredient(db, r15, "salt", 1, "teaspoon");
 
         //add more recipes
     }

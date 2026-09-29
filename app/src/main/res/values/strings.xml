@@ -8,5 +8,8 @@
         <item>l</item>
         <item>slice</item>
         <item>clove</item>
+        <item>teaspoon</item>
+        <item>tablespoon</item>
+
     </string-array>
 </resources>

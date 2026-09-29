@@ -4,7 +4,6 @@ import com.example.smartpantrymanager.data.DatabaseHelper;
 import com.example.smartpantrymanager.PantryItem;
 import com.example.smartpantrymanager.Recipe;
 import com.example.smartpantrymanager.RecipeIngredient;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -49,6 +48,9 @@ public class RecipeMatcher {
         for (RecipeIngredient required : recipe.getIngredients()) {
             String key = DatabaseHelper.normalizeIngredientName(required.getIngredientName());
             Double available = pantryMap.get(key);
+            android.util.Log.d("MATCH_DEBUG", recipe.getName() + " needs '" + key + "' qty="
+                    + required.getRequiredQuantity() + " " + required.getUnit()
+                    + " | pantry has: " + available);
             if (available == null || available < required.getRequiredQuantity()) {
                 return false;
             }
