@@ -18,7 +18,7 @@ public class PantryItem {
     public PantryItem(String name, double quantity, String unit, String expiryDate) {
         this(-1, name, quantity, unit, expiryDate);
     }
-
+//getters and setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
     public String getName() { return name; }

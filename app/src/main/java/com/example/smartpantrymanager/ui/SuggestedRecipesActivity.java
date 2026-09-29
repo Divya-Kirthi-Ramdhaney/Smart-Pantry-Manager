@@ -66,6 +66,7 @@ public class SuggestedRecipesActivity extends AppCompatActivity {
         refreshSuggestions();
     }
 
+    //loads data based on rules
     private void refreshSuggestions() {
         List<Recipe> allRecipes = dbHelper.getAllRecipesWithIngredients();
         List<PantryItem> pantry = dbHelper.getAllPantryItems();

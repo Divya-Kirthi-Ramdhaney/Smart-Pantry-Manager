@@ -9,12 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerPantry"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
+        <!--message when pantry is empty-->
         <TextView
             android:id="@+id/textEmptyPantry"
             android:layout_width="wrap_content"
@@ -32,7 +32,6 @@
             android:layout_margin="16dp"
             android:src="@android:drawable/ic_input_add"
             android:contentDescription="Add ingredient" />
-
     </RelativeLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -40,5 +39,4 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:menu="@menu/bottom_nav_menu" />
-
 </LinearLayout>

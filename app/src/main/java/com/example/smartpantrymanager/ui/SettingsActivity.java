@@ -36,7 +36,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         Switch switchExpiryAlerts = findViewById(R.id.switchExpiryAlerts);
-        switchExpiryAlerts.setChecked(prefs.getBoolean(KEY_EXPIRY_ALERTS, false));
+        switchExpiryAlerts.setChecked(prefs.getBoolean(KEY_EXPIRY_ALERTS, false));//saves values
         switchExpiryAlerts.setOnCheckedChangeListener((buttonView, isChecked) -> {
             prefs.edit().putBoolean(KEY_EXPIRY_ALERTS, isChecked).apply();
         });

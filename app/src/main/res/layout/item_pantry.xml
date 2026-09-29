@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:padding="12dp"
     android:gravity="center_vertical">
@@ -13,6 +13,7 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
+        <!-- ingredient name -->
         <TextView
             android:id="@+id/textItemName"
             android:layout_width="wrap_content"
@@ -21,15 +22,16 @@
             android:textStyle="bold"
             tools:text="Tomatoes" />
 
+        <!--quantity-->
         <TextView
             android:id="@+id/textItemQuantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            tools:text="3 unit. Expires 2026-10-01" />
-
+            tools:text="3 unit - expires 2026-10-01" />
     </LinearLayout>
 
+    <!--edit item-->
     <ImageButton
         android:id="@+id/buttonEdit"
         android:layout_width="40dp"
@@ -38,6 +40,7 @@
         android:src="@android:drawable/ic_menu_edit"
         android:contentDescription="Edit" />
 
+    <!--delete item-->
     <ImageButton
         android:id="@+id/buttonDelete"
         android:layout_width="40dp"
@@ -46,5 +49,4 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@android:drawable/ic_menu_delete"
         android:contentDescription="Delete" />
-
 </LinearLayout>

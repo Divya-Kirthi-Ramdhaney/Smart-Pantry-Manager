@@ -13,7 +13,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         tools:text="Scrambled Eggs on Toast" />
-
+<!--ingredients used-->
     <TextView
         android:id="@+id/textIngredientCount"
         android:layout_width="match_parent"

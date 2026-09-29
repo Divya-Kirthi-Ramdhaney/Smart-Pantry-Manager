@@ -29,12 +29,14 @@ public class PantryListActivity extends AppCompatActivity implements PantryAdapt
         dbHelper = new DatabaseHelper(this);
         textEmptyPantry = findViewById(R.id.textEmptyPantry);
 
+        //know how to arrage rows
         RecyclerView recyclerView = findViewById(R.id.recyclerPantry);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         adapter = new PantryAdapter(dbHelper.getAllPantryItems(), this);
         recyclerView.setAdapter(adapter);
 
+        //goes to next pahe to ass ingredient
         FloatingActionButton fab = findViewById(R.id.fabAddItem);
         fab.setOnClickListener(v -> {Intent intent = new Intent(PantryListActivity.this, AddEditIngredientActivity.class);
             startActivity(intent);});
@@ -65,20 +67,20 @@ public class PantryListActivity extends AppCompatActivity implements PantryAdapt
         super.onResume();
         refreshList();    }
 
-    private void refreshList() {
+    private void refreshList() { //updates the list
         List<PantryItem> items = dbHelper.getAllPantryItems();
         adapter.updateItems(items);
         textEmptyPantry.setVisibility(items.isEmpty() ? View.VISIBLE : View.GONE);
     }
 
-    @Override
+    @Override //edit items
     public void onEdit(PantryItem item) {
         Intent intent = new Intent(this, AddEditIngredientActivity.class);
         intent.putExtra(AddEditIngredientActivity.EXTRA_ITEM_ID, item.getId());
         startActivity(intent);
     }
 
-    @Override
+    @Override //delete items
     public void onDelete(PantryItem item) {
         dbHelper.deletePantryItem(item.getId());
         refreshList();

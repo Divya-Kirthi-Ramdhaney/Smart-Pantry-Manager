@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 public class RecipeMatcher {
+    //shows recipes that match exactly
     public static List<Recipe> getSuggestedRecipes(List<Recipe> allRecipes, List<PantryItem> pantry) {
         Map<String, Double> pantryMap = buildPantryMap(pantry);
         List<Recipe> suggested = new ArrayList<>();
@@ -22,6 +23,7 @@ public class RecipeMatcher {
         return suggested;
     }
 
+    //shows recipes that almost match
     public static List<Recipe> getAlmostThereRecipes(List<Recipe> allRecipes, List<PantryItem> pantry) {
         Map<String, Double> pantryMap = buildPantryMap(pantry);
         List<Recipe> almostThere = new ArrayList<>();

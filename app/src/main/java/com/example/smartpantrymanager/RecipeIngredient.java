@@ -7,6 +7,7 @@ public class RecipeIngredient {
     private double requiredQuantity;
     private String unit;
 
+    //shows ingredient
     public RecipeIngredient(int id, int recipeId, String ingredientName, double requiredQuantity, String unit) {
         this.id = id;
         this.recipeId = recipeId;

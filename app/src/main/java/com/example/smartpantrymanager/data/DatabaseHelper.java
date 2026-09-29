@@ -40,6 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        //create pantry table
         db.execSQL("CREATE TABLE " + TABLE_PANTRY + " (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "name TEXT NOT NULL, " +
@@ -47,11 +48,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "unit TEXT, " +
                 "expiry_date TEXT)");
 
+        //create recipe table
         db.execSQL("CREATE TABLE " + TABLE_RECIPES + " (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "name TEXT NOT NULL, " +
                 "preparation_steps TEXT)");
 
+        //create ingredient table
         db.execSQL("CREATE TABLE " + TABLE_RECIPE_INGREDIENTS + " (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "recipe_id INTEGER NOT NULL, " +
@@ -66,6 +69,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){}
 
+    //adding item to table
     public long addPantryItem(PantryItem item) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -76,6 +80,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.insert(TABLE_PANTRY, null, values);
     }
 
+    //showing items in pantry
     public List<PantryItem> getAllPantryItems() {
         List<PantryItem> items = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
@@ -93,6 +98,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return items;
     }
 
+    //updating pantry
     public int updatePantryItem(PantryItem item) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -103,11 +109,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.update(TABLE_PANTRY, values, "id = ?", new String[]{String.valueOf(item.getId())});
     }
 
+    //deleting titem from pantry
     public void deletePantryItem(int id) {
         SQLiteDatabase db = getWritableDatabase();
         db.delete(TABLE_PANTRY, "id = ?", new String[]{String.valueOf(id)});
     }
 
+    //example recipes
     private void seedRecipes(SQLiteDatabase db) {
         long r1 = insertRecipe(db, "Scrambled Eggs", "1. Whisk eggs.\n2. Melt butter in pan, cook eggs on low heat.\n3. Add salt and pepper.\n4. Serve");
         insertRecipeIngredient(db, r1, "eggs", 2, "unit");

@@ -30,6 +30,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
         TextView textIngredients = findViewById(R.id.textDetailIngredients);
         TextView textSteps = findViewById(R.id.textDetailSteps);
 
+        //validation
         if (found != null) {
             setTitle(found.getName());
             textName.setText(found.getName());

@@ -22,7 +22,7 @@
             android:layout_marginTop="16dp"
             android:text="Ingredients"
             android:textStyle="bold" />
-
+<!--required ingredients-->
         <TextView
             android:id="@+id/textDetailIngredients"
             android:layout_width="match_parent"

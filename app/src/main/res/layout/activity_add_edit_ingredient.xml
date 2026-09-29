@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:hint="Ingredient name"
         android:inputType="textCapWords" />
-
+    <!--error message-->
     <TextView
         android:id="@+id/errorName"
         android:layout_width="wrap_content"
@@ -27,7 +27,7 @@
         android:layout_marginTop="16dp"
         android:hint="Quantity"
         android:inputType="numberDecimal" />
-
+<!--error message-->
     <TextView
         android:id="@+id/errorQuantity"
         android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
     <Button
         android:id="@+id/buttonSave"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="53dp"
         android:layout_marginTop="24dp"
         android:text="Save" />
 

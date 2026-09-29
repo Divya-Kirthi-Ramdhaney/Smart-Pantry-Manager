@@ -9,13 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.smartpantrymanager.R;
 import com.example.smartpantrymanager.data.DatabaseHelper;
 import com.example.smartpantrymanager.PantryItem;
-
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -36,8 +33,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_edit_ingredient);
 
         dbHelper = new DatabaseHelper(this);
-
-        editName = findViewById(R.id.editName);
+        editName = findViewById(R.id.editName); //connect java to XML
         editQuantity = findViewById(R.id.editQuantity);
         editExpiryDate = findViewById(R.id.editExpiryDate);
         errorName = findViewById(R.id.errorName);
@@ -79,7 +75,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
         }
     }
 
-    private void showDatePicker() {
+    private void showDatePicker() {//brings a calender
         Calendar calendar = Calendar.getInstance();
         DatePickerDialog dialog = new DatePickerDialog(this,
                 (view, year, month, dayOfMonth) -> {
@@ -93,6 +89,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    //save updates
     private void onSaveClicked() {
         boolean isValid = true;
 
@@ -105,6 +102,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
             errorName.setVisibility(View.GONE);
         }
 
+        //validation
         String quantityText = editQuantity.getText().toString().trim();
         double quantity = 0;
         if (TextUtils.isEmpty(quantityText)) {
@@ -142,6 +140,6 @@ public class AddEditIngredientActivity extends AppCompatActivity {
             dbHelper.addPantryItem(newItem);
         }
 
-        finish();
+        finish(); //closes screen
     }
 }
