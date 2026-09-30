@@ -80,7 +80,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.insert(TABLE_PANTRY, null, values);
     }
 
-    //showing items in pantry
+    //showing items in pantry and reading with a cursor
     public List<PantryItem> getAllPantryItems() {
         List<PantryItem> items = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
